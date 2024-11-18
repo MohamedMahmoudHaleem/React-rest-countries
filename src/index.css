@@ -55,7 +55,6 @@ body {
   appearance: none;
 }
 .header .dark-text .img {
-  color: white;
   height: 17px;
   width: 17px;
   transform: rotate(-20deg);
