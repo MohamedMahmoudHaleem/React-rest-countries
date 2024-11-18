@@ -1,0 +1,62 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  font-size: 62.5%;
+  --bg-color: hsl(0, 0%, 98%);
+  --Text-color: hsl(200, 15%, 8%);
+  --input-color: hsl(0, 0%, 52%);
+  --Element-color: hsl(0, 0%, 100%);
+}
+[data-theme="dark"] {
+  --bg-color: hsl(207, 26%, 17%);
+  --Text-color: hsl(0, 0%, 100%);
+  --input-color: hsl(209, 23%, 22%);
+  --Element-color: hsl(209, 23%, 22%);
+}
+html,
+body {
+  font-family: "Nunito Sans", sans-serif;
+  height: 100%;
+  background-color: var(--bg-color);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  color: var(--Text-color);
+  background-color: var(--Element-color);
+  box-shadow: 0px 1px 13px 0.7px rgba(0, 0, 0, 0.1);
+  padding: 2rem 5rem;
+}
+.header .header-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.header .dark-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--Text-color);
+  gap: 0.3rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.header .dark-text .checker {
+  appearance: none;
+}
+.header .dark-text .img {
+  color: white;
+  height: 17px;
+  width: 17px;
+  transform: rotate(-20deg);
+}
