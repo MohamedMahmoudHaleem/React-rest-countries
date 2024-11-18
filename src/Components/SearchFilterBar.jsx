@@ -1,16 +1,25 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button"
+import CountryFilter from "./CountryFilter.jsx";
+import SearchIconDark from "/src/assets/searchIconLight.svg";
+import SearchIconLight from "/src/assets/searchIconDark.svg";
 function SearchFilterBar() {
-    const [country,setCountry] =useState('');
-    function handleCountry(e){
-        setCountry(e.target.value)
-    } 
-    console.log(country)
+  const [country, setCountry] = useState("");
+  function handleCountry(e) {
+    setCountry(e.target.value);
+  }
+  console.log(country);
   return (
-    <div>
-       <Button>Click me</Button>
-      <input type="text" placeholder="Search fo a country..." 
-      onChange={handleCountry}/>
+    <div className="search-filter-bar">
+      <div className="search">
+        <img className="img-magn" src={SearchIconDark} alt="" />
+        <input
+          className="input-field"
+          type="text"
+          placeholder="Search fo a country..."
+          onChange={handleCountry}
+        />
+      </div>
+      <CountryFilter />
     </div>
   );
 }
