@@ -32,7 +32,7 @@ body {
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  width: 100%;
+  min-width: 100%;
   color: var(--Text-color);
   background-color: var(--Element-color);
   box-shadow: 0px 1px 13px 0.7px rgba(0, 0, 0, 0.1);
@@ -89,25 +89,71 @@ body {
   height: 5rem;
   color: var(--input-color);
   padding: 0rem 5rem;
-  box-shadow: 0px 1px 13px 0.7px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 1px 13px 0.7px rgba(0, 0, 0, 0.05);
   font-weight: 500;
 }
-.select {
-  /* border: 2px solid black; */
-  background-color: var(--Element-color);
+::placeholder {
   color: var(--input-color);
-  padding: 0.5rem 2.5rem;
-  border-radius: 0.6rem;
-  box-shadow: 0px 1px 13px 0.7px rgba(0, 0, 0, 0.1);
+  opacity: 0.5;
+  font-size: 1.4rem;
+  font-weight: 100;
+  text-align: left;
+}
+/* select input */
+.select {
+  position: relative;
 }
 .select-data {
+  appearance: none;
+  width: 19rem;
+  border-radius: 0.6rem;
   background-color: var(--Element-color);
   padding: 0rem 2.5rem;
-  height: 4rem;
-  text-align: center;
-  font-weight: 400;
-  color: var(--input-color);
+  height: 4.9rem;
+  text-align: left;
+  /* font-weight: 550; */
+  color: var(--Text-color);
   border: none;
   outline: none;
+  box-shadow: 0px 1px 13px 0.7px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+}
+.select::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: 15rem;
+  top: 2.36rem;
+  border: 0.6rem solid transparent;
+  border-top-color: var(--Text-color);
+}
+.select::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: 15rem;
+  top: 2.2rem;
+  border: 0.6rem solid transparent;
+  border-top-color: var(--Element-color);
+  
+}
+.select-data option{
+  position: relative;
+  
 }
 
+@media (375px <=width<=750px) {
+  .search-filter-bar {
+    flex-direction: column;
+    gap: 4rem;
+  }
+  .search {
+    min-width: 100%;
+  }
+  .input-field {
+    width: 100%;
+  }
+  .select-data {
+    width: 50%;
+  }
+}

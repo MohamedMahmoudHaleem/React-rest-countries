@@ -15,7 +15,7 @@ function SearchFilterBar() {
         <input
           className="input-field"
           type="text"
-          placeholder="Search fo a country..."
+          placeholder="Search for a country..."
           onChange={handleCountry}
         />
       </div>
