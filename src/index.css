@@ -11,6 +11,7 @@
   --Text-color: hsl(200, 15%, 8%);
   --input-color: hsl(0, 0%, 52%);
   --Element-color: hsl(0, 0%, 100%);
+  --header-height: 65px;
 }
 [data-theme="dark"] {
   --bg-color: hsl(207, 26%, 17%);
@@ -24,9 +25,18 @@ body {
   height: 100%;
   background-color: var(--bg-color);
 }
+.app-body {
+  max-height: calc(100vh - var(--header-height));
+  overflow-y: auto;
+  padding-top:5rem  ;
+}
+.app-container {
+  /* max-height: 100vh; */
+}
 .container {
   /* padding: 0 5rem; */
 }
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -37,7 +47,7 @@ body {
   background-color: var(--Element-color);
   box-shadow: 0px 1px 13px 0.7px rgba(0, 0, 0, 0.1);
   padding: 2rem 5rem;
-  margin-bottom: 4.3rem;
+  /* margin-bottom: 4.3rem; */
 }
 .header .header-title {
   font-size: 1.8rem;
@@ -111,7 +121,6 @@ body {
   padding: 0rem 2.5rem;
   height: 4.9rem;
   text-align: left;
-  /* font-weight: 550; */
   color: var(--Text-color);
   border: none;
   outline: none;
@@ -135,11 +144,37 @@ body {
   top: 2.2rem;
   border: 0.6rem solid transparent;
   border-top-color: var(--Element-color);
-  
 }
-.select-data option{
+.select-data option {
   position: relative;
-  
+}
+/* Cards styling  */
+.country-list {
+  margin: 4rem 5rem;
+  /* width: 100%; */
+  display: grid;
+  gap: 6rem;
+  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+  grid-template-rows: repeat(2, 1fr);
+}
+.card-container {
+  background-color: var(--Element-color);
+  border-radius: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: var(--Text-color);
+  font-size: 1.4rem;
+}
+.card-img img {
+  width: 100%;
+  border-radius: 0.6rem;
+}
+.card-data {
+  display: flex;
+  flex-direction: column;
+  padding: 0rem 2rem 2rem;
+  gap: 1.3rem;
 }
 
 @media (375px <=width<=750px) {

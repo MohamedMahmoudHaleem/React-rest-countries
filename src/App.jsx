@@ -11,10 +11,18 @@ function App() {
   console.log("🚀 ~ Header ~ toggle:", toggle);
 
   return (
-    <div className="container" data-theme={toggle ? "dark" : ""}>
-      <Header toggle={toggle} handleToggle={handleToggle} />
-      <SearchFilterBar toggle={toggle} />
-      <CountryList />
+    <div className="app-container">
+      <div
+        className="container app-container"
+        data-theme={toggle ? "dark" : ""}
+      >
+        <Header toggle={toggle} handleToggle={handleToggle} />
+
+        <div className="app-body">
+          <SearchFilterBar toggle={toggle} />
+          <CountryList />
+        </div>
+      </div>
     </div>
   );
 }
