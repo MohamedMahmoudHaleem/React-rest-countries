@@ -115,7 +115,7 @@ body {
   color: var(--Text-color);
   border: none;
   outline: none;
-  box-shadow: 0px 1px 13px 0.7px rgba(0, 0, 0, 0.08);
+  /* box-shadow: 0px 1px 13px 0.7px rgba(0, 0, 0, 0.08); */
   cursor: pointer;
 }
 .select::before {

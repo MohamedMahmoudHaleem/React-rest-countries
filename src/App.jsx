@@ -11,9 +11,9 @@ function App() {
   console.log("🚀 ~ Header ~ toggle:", toggle);
 
   return (
-    <div className='container' data-theme={toggle ? "dark" : ""}>
+    <div className="container" data-theme={toggle ? "dark" : ""}>
       <Header toggle={toggle} handleToggle={handleToggle} />
-      <SearchFilterBar />
+      <SearchFilterBar toggle={toggle} />
       <CountryList />
     </div>
   );
