@@ -5,7 +5,7 @@ function CountryCard({ data }) {
     <Link to={`/country/${data?.name}`}>
       <div className="card-container">
         <div className="card-img">
-          <img src={data.flags.png} alt="" />
+          <img src={data.flags.svg} alt="" />
         </div>
         <div className="card-data">
           <div className="country-name">
