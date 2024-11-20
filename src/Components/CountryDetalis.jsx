@@ -23,7 +23,7 @@ function CountryDetalis({ toggle }) {
       </div>
       <div className="country-detalis">
         <div className="img-country-back">
-          <img src={country?.flags.png} alt="" />
+          <img src={country?.flags.svg} alt={country?.flags.name} />
         </div>
         <div className="country-detalis-info">
           <div className="country-detalis-header">
@@ -36,6 +36,9 @@ function CountryDetalis({ toggle }) {
               </p>
               <p className="country-text">
                 Population : <span>{country?.population}</span>
+              </p>
+              <p className="country-text">
+                region : <span>{country?.region}</span>
               </p>
               <p className="country-text">
                 Sub region : <span>{country?.subregion}</span>
@@ -59,6 +62,14 @@ function CountryDetalis({ toggle }) {
                   </span>
                 ))}
               </p>
+            </div>
+          </div>
+          <div className="border-country">
+            <p className="country-text">Border Countries:</p>
+            <div className="border-group">
+              {country?.borders.map((border, i) => (
+                <button className='border-btn'  key={i}>{border}</button>
+              ))}
             </div>
           </div>
         </div>
