@@ -9,6 +9,9 @@ function CountryDetalis({ toggle }) {
   console.log("🚀 ~ CountryDetalis ~ name:", name);
   const country = data.find((country) => country?.name === name);
   console.log("x", country);
+  function handleprams() {
+    console.log()
+  }
   return (
     <div className="country-main-detalis">
       <div className="back">
@@ -68,7 +71,13 @@ function CountryDetalis({ toggle }) {
             <p className="country-text">Border Countries:</p>
             <div className="border-group">
               {country?.borders.map((border, i) => (
-                <button className='border-btn'  key={i}>{border}</button>
+                <>
+                  <Link to={`country/:${country?.name}`}>
+                    <button className="border-btn" key={i}>
+                      {border}
+                    </button>
+                  </Link>
+                </>
               ))}
             </div>
           </div>
