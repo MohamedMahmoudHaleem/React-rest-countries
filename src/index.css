@@ -283,6 +283,7 @@ a {
     max-height: 23rem;
   }
   .country-main-detalis {
+    margin: 0rem 2rem;
     margin-bottom: 2rem;
   }
   .search-filter-bar {
@@ -300,7 +301,7 @@ a {
   }
   .country-detalis {
     flex-direction: column;
-    gap:4rem;
+    gap: 4rem;
   }
   .country-detalis-info-data {
     flex-direction: column;
