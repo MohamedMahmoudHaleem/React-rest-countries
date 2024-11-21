@@ -304,12 +304,52 @@ a {
     max-height: 23rem;
   }
   .country-main-detalis {
-    margin: 0rem 2rem;
+    /* margin: 0rem 2rem; */
     margin-bottom: 2rem;
+    padding: 0rem 2rem;
+    gap:5rem
   }
   .img-country-back img {
-    max-width: 44rem;
+    max-width: 33rem;
   }
+  /* ------------------ */
+  .country-detalis-info {
+    gap: 1.6rem;
+  }
+
+  .country-detalis-header {
+    font-size: 1.7rem;
+  }
+  .country-detalis-info-data .country-text {
+    font-weight: 550;
+    font-size: 1.8rem;
+  }
+  .country-detalis-info-data .country-text span {
+    font-weight: 350;
+  }
+  .border-country {
+    gap: 2rem;
+  }
+  .border-country .country-text {
+    align-self: start;
+    font-weight: 700;
+    /* font-size: 1.6rem; */
+  }
+  /* .border-country .border-group .border-btn {
+    margin-right: 1rem;
+    border: none;
+    background-color: var(--Element-color);
+    color: var(--input-color);
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.8rem;
+
+    width: 12rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.1),
+      -3px -3px 10px 1px rgba(0, 0, 0, 0.1);
+  } */
+  /* ------------------------ */
   .search-filter-bar {
     flex-direction: column;
     padding: 0 2rem;
@@ -326,7 +366,7 @@ a {
   }
   .country-detalis {
     flex-direction: column;
-    gap: 4rem;
+    gap: 2.9rem;
   }
   .country-detalis-info-data {
     flex-direction: column;
