@@ -5,9 +5,9 @@ import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 
 function CountryDetalis({ toggle }) {
-  const { alpha2Code } = useParams();
-  console.log("🚀 ~ CountryDetalis ~ area:", alpha2Code);
-  const country = data.find((country) => country?.alpha2Code === alpha2Code);
+  const { alpha3Code } = useParams();
+  console.log("🚀 ~ CountryDetalis ~ area:", alpha3Code);
+  const country = data.find((country) => country?.alpha3Code === alpha3Code);
   console.log("🚀 ~ CountryDetalis ~ country:", country);
 
   // function handleprams() {
@@ -74,7 +74,7 @@ function CountryDetalis({ toggle }) {
               {country?.borders ? (
                 country?.borders?.map((border) => (
                   <>
-                    <Link to={`country/:${country?.alpha2Code}`}>
+                    <Link to={`:${country?.alpha3Code}`}>
                       <button className="border-btn" key={border[0]}>
                         {border}
                       </button>

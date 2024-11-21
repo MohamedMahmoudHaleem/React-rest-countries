@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function CountryCard({ data }) {
   return (
     // country/:alpha2Code
-    <Link to={`/country/${data?.alpha2Code}`}>
+    <Link to={`/country/${data?.alpha3Code}`}>
       <div className="card-container">
         <div className="card-img">
           <img src={data?.flags.svg} alt="" />
