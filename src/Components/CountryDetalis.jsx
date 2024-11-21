@@ -1,18 +1,19 @@
 import leftArrowLight from "../assets/leftArrowLight.svg";
 import leftArrowDark from "../assets/leftArrowDark.svg";
 import data from "../../data.json";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { Link } from "react-router-dom";
 
 function CountryDetalis({ toggle }) {
   const { alpha3Code } = useParams();
+  const navigate = useNavigate();
   console.log("🚀 ~ CountryDetalis ~ area:", alpha3Code);
   const country = data.find((country) => country?.alpha3Code === alpha3Code);
   console.log("🚀 ~ CountryDetalis ~ country:", country);
 
-  // function handleprams() {
-  //   console.log();
-  // }
+  function handleBorderClick(borderCode) {
+    navigate(`/country/${borderCode}`);
+  }
   return (
     <div className="country-main-detalis">
       <div className="back">
@@ -74,11 +75,13 @@ function CountryDetalis({ toggle }) {
               {country?.borders ? (
                 country?.borders?.map((border) => (
                   <>
-                    <Link to={`:${country?.alpha3Code}`}>
-                      <button className="border-btn" key={border[0]}>
-                        {border}
-                      </button>
-                    </Link>
+                    <button
+                      onClick={() => handleBorderClick(border)}
+                      className="border-btn"
+                      key={border[0]}
+                    >
+                      {border}
+                    </button>
                   </>
                 ))
               ) : (
