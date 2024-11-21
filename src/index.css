@@ -280,11 +280,15 @@ a {
     /* padding: 1rem; */
   }
   .card-container .card-img img {
+    
     max-height: 23rem;
   }
   .country-main-detalis {
     margin: 0rem 2rem;
     margin-bottom: 2rem;
+  }
+  .img-country-back img {
+    max-width: 44rem;
   }
   .search-filter-bar {
     flex-direction: column;
