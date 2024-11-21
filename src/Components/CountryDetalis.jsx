@@ -10,9 +10,9 @@ function CountryDetalis({ toggle }) {
   const country = data.find((country) => country?.alpha2Code === alpha2Code);
   console.log("🚀 ~ CountryDetalis ~ country:", country);
 
-  function handleprams() {
-    console.log();
-  }
+  // function handleprams() {
+  //   console.log();
+  // }
   return (
     <div className="country-main-detalis">
       <div className="back">
@@ -87,7 +87,8 @@ function CountryDetalis({ toggle }) {
                   style={{
                     width: "28rem",
                     fontWeight: "bold",
-                    fontSize: "1.8rem",
+                    fontSize: "1.6rem",
+                    textAlign: "center",
                   }}
                 >
                   {" "}
