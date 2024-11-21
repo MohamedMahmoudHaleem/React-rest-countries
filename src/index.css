@@ -301,7 +301,7 @@ a {
     width: 100%;
   }
   .select-data {
-    width: 50%;
+    width:20rem
   }
   .country-detalis {
     flex-direction: column;
