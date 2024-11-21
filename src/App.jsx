@@ -33,7 +33,7 @@ function App() {
                 }
               />
               <Route
-                path="country/:name"
+                path="country/:alpha2Code"
                 element={
                   <>
                     <CountryDetalis toggle={toggle} />

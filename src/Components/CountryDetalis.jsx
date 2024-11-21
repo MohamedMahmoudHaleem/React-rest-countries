@@ -5,12 +5,13 @@ import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 
 function CountryDetalis({ toggle }) {
-  const { name } = useParams();
-  console.log("🚀 ~ CountryDetalis ~ name:", name);
-  const country = data.find((country) => country?.name === name);
-  console.log("x", country);
+  const { alpha2Code } = useParams();
+  console.log("🚀 ~ CountryDetalis ~ area:", alpha2Code);
+  const country = data.find((country) => country?.alpha2Code === alpha2Code);
+  console.log("🚀 ~ CountryDetalis ~ country:", country);
+
   function handleprams() {
-    console.log()
+    console.log();
   }
   return (
     <div className="country-main-detalis">
@@ -30,7 +31,7 @@ function CountryDetalis({ toggle }) {
         </div>
         <div className="country-detalis-info">
           <div className="country-detalis-header">
-            <h2>{country.name}</h2>
+            <h2>{country?.name}</h2>
           </div>
           <div className="country-detalis-info-data">
             <div className="info-data-1">
@@ -55,7 +56,7 @@ function CountryDetalis({ toggle }) {
                 Top Level Domain : <span>{country?.topLevelDomain}</span>
               </p>
               <p className="country-text">
-                Currencies : <span>{country?.currencies.at(0).name}</span>
+                Currencies : <span>{country?.currencies[0].name}</span>
               </p>
               <p className="country-text">
                 Languages :{" "}
@@ -70,15 +71,29 @@ function CountryDetalis({ toggle }) {
           <div className="border-country">
             <p className="country-text">Border Countries:</p>
             <div className="border-group">
-              {country?.borders.map((border, i) => (
-                <>
-                  <Link to={`country/:${country?.name}`}>
-                    <button className="border-btn" key={i}>
-                      {border}
-                    </button>
-                  </Link>
-                </>
-              ))}
+              {country?.borders ? (
+                country?.borders?.map((border) => (
+                  <>
+                    <Link to={`country/:${country?.alpha2Code}`}>
+                      <button className="border-btn" key={border[0]}>
+                        {border}
+                      </button>
+                    </Link>
+                  </>
+                ))
+              ) : (
+                <p
+                  className="border-btn"
+                  style={{
+                    width: "28rem",
+                    fontWeight: "bold",
+                    fontSize: "1.8rem",
+                  }}
+                >
+                  {" "}
+                  There Is No Borders Countires{" "}
+                </p>
+              )}
             </div>
           </div>
         </div>
