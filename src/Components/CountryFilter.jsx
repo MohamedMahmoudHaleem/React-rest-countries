@@ -1,18 +1,19 @@
-export default function CountryFilter() {
+export default function CountryFilter({ region, setRegion }) {
   return (
     <div className="select">
-      <select className="select-data" id="select-region">
+      <select
+        className="select-data"
+        id="select-region"
+        value={region}
+        onChange={(e) => setRegion(e.target.value)}
+      >
         <option value="">Filter by Region</option>
-        <option value="africa">Africa</option>
-        <option value="america">America</option>
-        <option value="asia">Asia</option>
-        <option value="europe">Europe</option>
-        <option value="oceania">Oceania</option>
+        <option value="Africa">Africa</option>
+        <option value="Americas">America</option>
+        <option value="Asia">Asia</option>
+        <option value="Europe">Europe</option>
+        <option value="Oceania">Oceania</option>
       </select>
     </div>
   );
 }
-
-{/* <label className="select-label" id="select-region">
- 
-</label> */}

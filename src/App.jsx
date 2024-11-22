@@ -9,6 +9,7 @@ import { useState } from "react";
 function App() {
   const [toggle, setToggle] = useState(false);
   const [countrySearch, setCountrySearch] = useState("");
+  const [region, setRegion] = useState("");
   function handleSearchCountry(e) {
     setCountrySearch(e.target.value);
   }
@@ -35,8 +36,13 @@ function App() {
                       toggle={toggle}
                       countrySearch={countrySearch}
                       handleSearchCountry={handleSearchCountry}
+                      setRegion={setRegion}
+                      region={region}
                     />
-                    <CountryList countrySearch={countrySearch} />
+                    <CountryList
+                      countrySearch={countrySearch}
+                      region={region}
+                    />
                   </>
                 }
               />

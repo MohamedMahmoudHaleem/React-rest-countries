@@ -1,8 +1,13 @@
-import { useState } from "react";
 import CountryFilter from "./CountryFilter.jsx";
 import SearchIconDark from "/src/assets/searchIconLight.svg";
 import SearchIconLight from "/src/assets/searchIconDark.svg";
-function SearchFilterBar({ toggle, handleSearchCountry, countrySearch }) {
+function SearchFilterBar({
+  toggle,
+  handleSearchCountry,
+  countrySearch,
+  region,
+  setRegion,
+}) {
   return (
     <div className="search-filter-bar">
       <div className="search">
@@ -19,7 +24,7 @@ function SearchFilterBar({ toggle, handleSearchCountry, countrySearch }) {
           onChange={handleSearchCountry}
         />
       </div>
-      <CountryFilter />
+      <CountryFilter setRegion={setRegion} region={region} />
     </div>
   );
 }
