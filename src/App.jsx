@@ -8,7 +8,11 @@ import { useState } from "react";
 
 function App() {
   const [toggle, setToggle] = useState(false);
-  console.log("🚀 ~ App ~ toggle:", toggle);
+  const [countrySearch, setCountrySearch] = useState("");
+  function handleSearchCountry(e) {
+    setCountrySearch(e.target.value);
+  }
+
   function handleToggle() {
     setToggle(!toggle);
   }
@@ -27,8 +31,12 @@ function App() {
                 path="/"
                 element={
                   <>
-                    <SearchFilterBar toggle={toggle} />
-                    <CountryList />
+                    <SearchFilterBar
+                      toggle={toggle}
+                      countrySearch={countrySearch}
+                      handleSearchCountry={handleSearchCountry}
+                    />
+                    <CountryList countrySearch={countrySearch} />
                   </>
                 }
               />

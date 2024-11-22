@@ -2,17 +2,33 @@ import CountryCard from "./CountryCard.jsx";
 import data from "../../data.json";
 import { useEffect, useState } from "react";
 
-function CountryList() {
-  // console.log(data);
+function CountryList({ countrySearch }) {
   const { loading, error, countries } = useCustomeCountries();
+
+  function editeSearch(search) {
+    if (!search) return;
+    return search
+      .trim()
+      .toLowerCase()
+      .split(" ")
+      .map((word) => word[0].toUpperCase() + word.slice(1))
+      .join(" ");
+  }
+  const specifcCountry = countries.find((country) => country?.name === editeSearch(countrySearch));
   return (
     <div className="country-list">
       {loading && <p>Loading ...</p>}
       {error && <p>error</p>}
-
-      {countries.map((country) => (
+      {specifcCountry ? (
+        <CountryCard key={specifcCountry?.alpha2Code} data={specifcCountry} />
+      ) : (
+        countries.map((country) => (
+          <CountryCard key={country.alpha2Code} data={country} />
+        ))
+      )}
+      {/* {countries.map((country) => (
         <CountryCard key={country.alpha2Code} data={country} />
-      ))}
+      ))} */}
     </div>
   );
 }
